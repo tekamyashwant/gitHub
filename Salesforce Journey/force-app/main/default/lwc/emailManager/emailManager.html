@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Email Manager" icon-name="custom:custom63">
+        <!-- Email Threads Section -->
+         <div class="slds-var-p-around_small">
+        <template if:true={emailThreadsShow}>
+            <template for:each={emailThreads} for:item="email">
+                <div key={email.Id} >
+                    <p><strong>From:</strong> {email.FromAddress}</p>
+                    <p><strong>To:</strong> {email.ToAddress}</p>
+                    <p><strong>Subject:</strong> {email.Subject}</p>
+                    <p>{email.TextBody}</p>
+                <hr/>
+                </div>
+            </template>
+        </template>
+        <lightning-button label="Reply All" onclick={handleReplyAll} class="reply-all-btn"></lightning-button>
+
+        <!-- Compose Email Section -->
+        <lightning-input type="text" label="Subject" value={subject} onchange={handleInputChange} data-id="subject" name="subject"></lightning-input>
+        <lightning-input type="text" label="To" value={toAddresses} onchange={handleInputChange} data-id="toAddresses" name="toAddresses"></lightning-input>
+        <lightning-input type="text" label="CC" value={ccAddresses} onchange={handleInputChange} data-id="ccAddresses" name="ccAddresses"></lightning-input>
+        <lightning-textarea label="Body" value={body} onchange={handleInputChange} data-id="body" name="body"></lightning-textarea>
+        <lightning-button label="Send Email" onclick={handleSendEmail}></lightning-button>
+         </div>
+    </lightning-card>
+</template>
