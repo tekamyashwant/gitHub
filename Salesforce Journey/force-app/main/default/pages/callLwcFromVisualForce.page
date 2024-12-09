@@ -1,0 +1,12 @@
+<apex:page showHeader="true" sidebar="false">
+    <h1>Navigate to LWC</h1>
+    <button onclick="navigateToLWC()">Go to Lightning Web Component</button>
+
+    <script>
+        function navigateToLWC() {
+            // URL to the LWC with parameter
+            const url = '/lightning/cmp/c__exampleLWC?c__param=HelloWorld';
+            window.open(url, '_blank'); // Open in a new tab or use location.href for same tab
+        }
+    </script>
+</apex:page>
