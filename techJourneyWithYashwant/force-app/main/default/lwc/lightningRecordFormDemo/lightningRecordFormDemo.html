@@ -1,0 +1,53 @@
+<template>
+  <lightning-card
+    title="Lightning Record Form : Create Mode"
+    icon-name="custom:custom14"
+  >
+    <lightning-record-form
+      class="slds-var-p-around_small"
+      object-api-name={objectApiName}
+      fields={fieldsList}
+      columns="2"
+      onsuccess={navigateToRecordPage}
+    ></lightning-record-form>
+  </lightning-card>
+  <lightning-card
+    title="Lightning Record Form : Read-Only Mode"
+    icon-name="custom:custom14"
+  >
+    <lightning-record-form
+      class="slds-var-p-around_small"
+      record-id={recordId}
+      object-api-name={objectApiName}
+      fields={fieldsList}
+      columns="2"
+      mode="readonly"
+    ></lightning-record-form>
+  </lightning-card>
+  <lightning-card
+    title="Lightning Record Form : View Mode"
+    icon-name="custom:custom14"
+  >
+    <lightning-record-form
+      class="slds-var-p-around_small"
+      record-id={recordId}
+      object-api-name={objectApiName}
+      fields={fieldsList}
+      columns="2"
+    ></lightning-record-form>
+  </lightning-card>
+  <lightning-card
+    title="Lightning Record Form : Edit Mode"
+    icon-name="custom:custom14"
+  >
+    <lightning-record-form
+      class="slds-var-p-around_small"
+      record-id={recordId}
+      object-api-name={objectApiName}
+      fields={fieldsList}
+      columns="2"
+      mode="edit"
+      onsuccess={showToastNotify}
+    ></lightning-record-form>
+  </lightning-card>
+</template>

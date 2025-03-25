@@ -1,0 +1,13 @@
+<template>
+  <lightning-card title="Order Details" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <template lwc:if={orderDetails.data}>
+        <template for:each={orderDetails.data} for:item="order">
+          <div key={order.Id} class="slds-var-p-around_small image-container">
+            <img src={order.DisplayUrl} />
+          </div>
+        </template>
+      </template>
+    </div>
+  </lightning-card>
+</template>

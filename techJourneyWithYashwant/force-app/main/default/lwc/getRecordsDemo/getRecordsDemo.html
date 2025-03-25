@@ -1,0 +1,14 @@
+<template>
+  <lightning-card icon-name="custom:custom18" title="Get Records Demo">
+    <div class="slds-var-p-around_small">
+      <template lwc:if={outputRecords}>
+        <template for:each={outputRecords.results} for:item="output">
+          <div key={output.result.id}>
+            <p>Api Name : {output.result.apiName}</p>
+            <p>Record Name : {output.result.fields.Name.value}</p>
+          </div>
+        </template>
+      </template>
+    </div>
+  </lightning-card>
+</template>

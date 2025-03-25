@@ -1,0 +1,29 @@
+<template>
+  <lightning-card title="Render CSS Demo" icon-name="custom:custom17">
+    <div class="'slds-var-p-around_small">
+      <p class={pColor}>
+        Welcome to learn LWC from Tech Journey With Yashwant.
+      </p>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-button
+        label="Add CSS"
+        variant="brand"
+        onclick={clickHandler}
+        class="slds-var-p-around_small"
+      ></lightning-button>
+      <lightning-button
+        label="Remove CSS"
+        variant="brand"
+        onclick={clickHandler}
+        class="slds-var-p-around_small"
+      ></lightning-button>
+      <lightning-button
+        label="Toggle CSS"
+        variant="brand"
+        onclick={clickHandler}
+        class="slds-var-p-around_small"
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

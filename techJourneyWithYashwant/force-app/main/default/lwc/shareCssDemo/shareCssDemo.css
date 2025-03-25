@@ -1,0 +1,17 @@
+@import "c/cssLibrary";
+:host{
+    display: block;
+    background-color: bisque;
+}
+
+.bgclass{
+    color: var(--c-custombackground);
+}
+
+.btnbg{
+  
+    --slds-c-button-brand-color-background:yellow;
+    --slds-c-button-radius-border:10px;
+    --slds-c-button-brand-color-background-hover:green;
+    --slds-c-button-brand-text-color-active:red;
+}

@@ -1,0 +1,33 @@
+<template>
+  <lightning-card
+    title="Get Picklist Values by Record Type Id"
+    icon-name="custom:custom14"
+  >
+    <template lwc:if={accountPicklistValues}>
+      <div class="slds-var-p-around_small">
+        <lightning-combobox
+          name="rating"
+          label="Rating"
+          placeholder="Select Rating"
+          options={accountPicklistValues.picklistFieldValues.Rating.values}
+        ></lightning-combobox>
+      </div>
+      <div class="slds-var-p-around_small">
+        <lightning-combobox
+          name="type"
+          label="Type"
+          placeholder="Select Type"
+          options={accountPicklistValues.picklistFieldValues.Type.values}
+        ></lightning-combobox>
+      </div>
+      <div class="slds-var-p-around_small">
+        <lightning-combobox
+          name="paymenttype"
+          label="Payment Type"
+          placeholder="Select Payment Type"
+          options={accountPicklistValues.picklistFieldValues.Payment_Type__c.values}
+        ></lightning-combobox>
+      </div>
+    </template>
+  </lightning-card>
+</template>

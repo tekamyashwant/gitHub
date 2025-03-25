@@ -1,0 +1,16 @@
+<template>
+  <lightning-card
+    title="Wire Accounts With Function"
+    icon-name="custom:custom14"
+  >
+    <template lwc:if={accounts}>
+      <div class="slds-var-p-around_small">
+        <lightning-datatable key-field="id" data={accounts} columns={columns}>
+        </lightning-datatable>
+      </div>
+    </template>
+    <template lwc:elseif={error}>
+      <c-error-panel errors={errors}></c-error-panel>
+    </template>
+  </lightning-card>
+</template>

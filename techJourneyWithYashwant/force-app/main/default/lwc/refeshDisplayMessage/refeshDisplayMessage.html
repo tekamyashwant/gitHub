@@ -1,0 +1,22 @@
+<template>
+  <template lwc:if={showWarning}>
+    <div class="slds-notify slds-notify_alert slds-alert_warning" role="alert">
+      <span class="slds-assistive-text">warning</span>
+      <lightning-icon
+        icon-name="utility:warning"
+        alternative-text="Warning"
+        title="Warning"
+      ></lightning-icon>
+      <h2>Your data is out dated, Please refresh your page.</h2>
+      <div class="slds-notify__close">
+        <lightning-button-icon
+          icon-name="utility:refresh"
+          variant="bare"
+          alternative-text="Refesh"
+          onclick={refreshHandler}
+        ></lightning-button-icon>
+      </div>
+      <div lwc:if={isLoaded} class="slds-is-relative">
+        <lightning-spinner alternative-text="Loading..."> </lightning-spinner>
+      </div></div></template
+></template>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property
+        name="objectLabel"
+        type="String"
+        required="true"
+        description="Kindly enter object label name"
+        label="Enter Label"
+        default="Account"
+      />
+      <property
+        name="apiName"
+        type="String"
+        required="true"
+        description="Kindly enter object api name"
+        label="Enter Object Api Name"
+        default="Account"
+      />
+      <property
+        name="objectIconName"
+        type="String"
+        required="true"
+        description="Kindly enter object icon name"
+        label="Enter Object Icon Name"
+        default="standard:account"
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

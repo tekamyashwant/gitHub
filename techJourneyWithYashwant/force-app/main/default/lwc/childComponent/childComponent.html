@@ -1,0 +1,22 @@
+<template>
+  <lightning-card
+    title="Api Decorator Demo"
+    icon-name="custom:custom20"
+    class="bgcard"
+  >
+    <div class="slds-var-p-around_small">
+      <lightning-formatted-text value={display}></lightning-formatted-text>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-formatted-text
+        value={displayGreeting}
+      ></lightning-formatted-text>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-formatted-text
+        value={useroccupation}
+      ></lightning-formatted-text>
+      <p>Is Available : {isAvailable}</p>
+    </div>
+  </lightning-card>
+</template>

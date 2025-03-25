@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+  <c:childLwcComponent
+    aura:id="childcomp"
+    message="Welcome to Tech Journey With Yashwant."
+    onchildmsg="{! c.handleMessageChild}"
+  ></c:childLwcComponent>
+  <lightning:button
+    variant="brand"
+    label="Send Greeting"
+    title="Send Greeting"
+    onclick="{! c.handleClick }"
+  />
+</aura:component>

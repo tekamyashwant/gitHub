@@ -1,0 +1,30 @@
+<template>
+  <lightning-card title="Edit Account Form" icon-name="standard:account">
+    <div class="slds-var-p-around_small">
+      <lightning-input
+        read-only="true"
+        label="Name"
+        value={accName}
+      ></lightning-input>
+      <lightning-input
+        label="Ticker Symbol"
+        value={accTicker}
+        onchange={changeHandler}
+      ></lightning-input>
+    </div>
+    <div class="slds-var-p-around_small">
+      <template lwc:if={isLoading}
+        ><lightning-spinner
+          alternative-text="Loading"
+          size="small"
+        ></lightning-spinner
+      ></template>
+
+      <lightning-button
+        variant="brand"
+        label="Update Account"
+        onclick={handleClick}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

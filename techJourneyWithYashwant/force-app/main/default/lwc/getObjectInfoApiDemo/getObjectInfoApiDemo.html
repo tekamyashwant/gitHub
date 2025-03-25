@@ -1,0 +1,23 @@
+<template>
+  <lightning-card title="Get Object Info Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <template lwc:if={accountinfo}>
+        <div class="slds-var-p-around_small">
+          <p>Object Api Name : {accountinfo.apiName}</p>
+        </div>
+        <div class="slds-var-p-around_small">
+          <p>Child Relationships Name</p>
+          <template
+            for:each={accountinfo.childRelationships}
+            for:item="accinfo"
+          >
+            <p key={accinfo.childObjectApiName}>{accinfo.childObjectApiName}</p>
+          </template>
+        </div>
+      </template>
+      <template lwc:if={accounterror}>
+        <c-error-panel errors={accounterror}></c-error-panel>
+      </template>
+    </div>
+  </lightning-card>
+</template>

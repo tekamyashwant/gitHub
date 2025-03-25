@@ -1,0 +1,43 @@
+<template>
+  <lightning-card
+    title="Lightning Record Edit Form : Create Record"
+    icon-name="standard:account"
+  >
+    <lightning-record-edit-form
+      object-api-name={objectApiName}
+      onsuccess={successHandler}
+      onerror={errorHandler}
+      onsubmit={submitHandler}
+    >
+      <lightning-messages></lightning-messages>
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-var-p-around_small">
+          <lightning-input-field field-name={fieldsList.Name}>
+          </lightning-input-field>
+          <lightning-input-field field-name={fieldsList.Industry}>
+          </lightning-input-field>
+        </div>
+        <div class="slds-col slds-var-p-around_small">
+          <lightning-input-field field-name={fieldsList.Rating}>
+          </lightning-input-field>
+          <lightning-input-field field-name={fieldsList.SLAExpirationDate}>
+          </lightning-input-field>
+        </div>
+      </div>
+      <div class="slds-var-p-around_small">
+        <lightning-button
+          class="slds-var-p-around_small"
+          type="submit"
+          label="Create Record"
+          variant="brand"
+        ></lightning-button>
+        <lightning-button
+          class="slds-var-p-around_small"
+          label="Reset all fields"
+          variant="brand"
+          onclick={resetHandler}
+        ></lightning-button>
+      </div>
+    </lightning-record-edit-form>
+  </lightning-card>
+</template>

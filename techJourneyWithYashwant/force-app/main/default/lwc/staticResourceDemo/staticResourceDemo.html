@@ -1,0 +1,45 @@
+<template>
+  <lightning-card title="Third Party JS Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <p class="animate__rubberBand animate__delay-2s">{displayDate}</p>
+    </div>
+  </lightning-card>
+  <lightning-card title="Third Party CSS Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <p class="animate__rubberBand animate__delay-2s">
+        User Name : {userName}
+      </p>
+    </div>
+  </lightning-card>
+  <lightning-card title="User Permission" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <template lwc:if={checkPermisson}>
+        <p>You are authorized to see this message.</p>
+      </template>
+      <template lwc:else>
+        <p>Sorry, user has no permission.</p>
+      </template>
+    </div>
+  </lightning-card>
+  <lightning-card title="Static Resource Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <img src={logo} alt="Logo" />
+    </div>
+  </lightning-card>
+  <lightning-card title="Content Asset Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <img src={assetContent} alt="Logo" />
+    </div>
+  </lightning-card>
+  <lightning-card title="Custom Label Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <p>{label.greeting}</p>
+      <p>{label.platform}</p>
+    </div>
+  </lightning-card>
+  <lightning-card title="USER ID Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <p>User Name : {userName}</p>
+    </div>
+  </lightning-card>
+</template>

@@ -1,0 +1,75 @@
+<template>
+  <div class="slds-box slds-theme_shade">
+    <!-- Contact Filter -->
+    <c-contact-filter onsendtoparent={accIdIndustryHandler}></c-contact-filter>
+  </div>
+  <div>
+    <!-- Grid and Gallery -->
+    <lightning-tabset variant="scoped">
+      <lightning-tab label="Grid">
+        <template lwc:if={contacts}>
+          <lightning-datatable
+            key-field="id"
+            data={contacts.data}
+            columns={columns}
+            hide-checkbox-column="true"
+          >
+          </lightning-datatable>
+        </template>
+      </lightning-tab>
+      <lightning-tab label="Gallery">
+        <template lwc:if={contacts}>
+          <div class="slds-grid slds-wrap">
+            <template for:each={contacts.data} for:item="contact">
+              <div
+                key={contact.Id}
+                class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_3-of-12 slds-p-around_large"
+              >
+                <div class="slds-grid slds-gutters slds-box slds-theme_shade">
+                  <div class="slds-col slds-size_2-of-3">
+                    <div class="slds-grid slds-grid_vertical">
+                      <div class="slds-col">
+                        <p>{contact.Name}</p>
+                      </div>
+                      <div class="slds-col">
+                        <div class="slds-grid">
+                          <div class="slds-col slds-p-horizontal_medium">
+                            <img src={contact.PhotoUrl} />
+                          </div>
+                          <div class="slds-col slds-p-horizontal_medium">
+                            <p>{contact.Title}</p>
+                            <p>
+                              <lightning-formatted-email
+                                value={contact.Email}
+                              ></lightning-formatted-email>
+                            </p>
+                            <p>
+                              <lightning-formatted-phone
+                                value={contact.Phone}
+                              ></lightning-formatted-phone>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-col slds-size_1-of-3">
+                    <lightning-icon
+                      data-item={contact.Id}
+                      icon-name="utility:search"
+                      alternative-text="Contact"
+                      size="x-small"
+                      title="View Contact"
+                      onclick={contactSearchClickHandler}
+                      class="buttonmargin"
+                    ></lightning-icon>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </template>
+      </lightning-tab>
+    </lightning-tabset>
+  </div>
+</template>

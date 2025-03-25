@@ -1,0 +1,25 @@
+<template>
+  <lightning-card title="Alert Demo" icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <lightning-button
+        label="Alert"
+        variant="brand"
+        onclick={alertHandler}
+      ></lightning-button>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-button
+        label="Confirm"
+        variant="brand"
+        onclick={confirmHandler}
+      ></lightning-button>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-button
+        label="Prompt"
+        variant="brand"
+        onclick={promptHandler}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

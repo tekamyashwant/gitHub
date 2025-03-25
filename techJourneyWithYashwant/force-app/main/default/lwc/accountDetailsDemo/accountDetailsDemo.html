@@ -1,0 +1,80 @@
+<template>
+  <lightning-card title={formTitle} icon-name="custom:custom14">
+    <div class="slds-var-p-around_small">
+      <lightning-combobox
+        name="parentaccount"
+        label="Parent Account"
+        placeholder="Select Parent Account"
+        options={parentAccountOptions}
+        onchange={handleChange}
+        required="true"
+        message-when-value-missing="Please select parent account."
+        class="validateme"
+        value={parentAccount}
+      ></lightning-combobox>
+      <lightning-input
+        label="Account Name"
+        name="accountname"
+        type="text"
+        onchange={handleChange}
+        required="true"
+        message-when-value-missing="Please enter account name."
+        min-length="1"
+        max-length="80"
+        class="validateme"
+        value={accountName}
+      ></lightning-input>
+      <lightning-input
+        name="sladate"
+        label="SLA Expiration Date"
+        type="date"
+        onchange={handleChange}
+        value={sladate}
+      ></lightning-input>
+      <template lwc:if={slaTypePickListValues.data}>
+        <lightning-radio-group
+          name="slatype"
+          label="SLA Type"
+          options={slaTypePickListValues.data.values}
+          type="button"
+          onchange={handleChange}
+          value={slatype}
+        ></lightning-radio-group>
+      </template>
+      <lightning-slider
+        name="noofloactions"
+        label="Number of Locations"
+        value={nooflocations}
+        onchange={handleChange}
+        min="1"
+        max="50"
+        step="1"
+      ></lightning-slider>
+
+      <lightning-input-rich-text
+        label-visible
+        label="Description"
+        name="description"
+        onchange={handleChange}
+        disabled-categories="FORMAT_FONT"
+        value={description}
+      >
+      </lightning-input-rich-text>
+    </div>
+    <div class="slds-var-p-around_small slds-align_absolute-center">
+      <lightning-button
+        label={buttonLabel}
+        variant="brand"
+        onclick={handleClick}
+      ></lightning-button>
+      <template lwc:if={isDeleteAvailable}>
+        <lightning-button
+          class="slds-var-p-around_small"
+          label="Delete Record"
+          variant="destructive"
+          onclick={deleteRecordHandler}
+        ></lightning-button>
+      </template>
+    </div>
+  </lightning-card>
+</template>

@@ -1,0 +1,16 @@
+<template>
+  <lightning-card title="Get Object Infos Demo" icon-name="custom:custom14">
+    <div class="slds-car-p-around_small">
+      <template lwc:if={objectData}>
+        <template for:each={objectData.results} for:item="info">
+          <p key={info.result.apiName}>
+            Object Api Name : {info.result.apiName}
+          </p>
+        </template>
+      </template>
+      <template lwc:if={objectError}>
+        <c-error-panel errors={objectError}></c-error-panel>
+      </template>
+    </div>
+  </lightning-card>
+</template>

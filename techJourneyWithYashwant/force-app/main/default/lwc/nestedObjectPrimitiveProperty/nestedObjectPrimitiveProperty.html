@@ -1,0 +1,34 @@
+<template>
+  <lightning-card title="Nested Object Track Property">
+    <div class="slds-var-p-around_medium">
+      <p>{myDetails.fname}</p>
+      <ol>
+        <template for:each={myTask} for:item="task" for:index="index">
+          <li key={task}>{index}. {task}</li>
+        </template>
+      </ol>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-button
+        label="Change Name"
+        variant="brand"
+        onclick={clickHandler}
+      ></lightning-button>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-button
+        label="Add Task"
+        variant="brand"
+        onclick={addTaskHandler}
+      ></lightning-button>
+    </div>
+    <div class="slds-var-p-around_small">
+      <lightning-button
+        label="Refresh All"
+        variant="brand"
+        icon-name="utitlity:refresh"
+        onclick={refreshHandler}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>
