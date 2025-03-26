@@ -1,0 +1,8 @@
+<template>
+  <template lwc:if={contacts}>
+    <lightning-card title="Custom Datatable" icon-name="custom:custom14">
+      <c-custom-data-types key-field="id" data={contacts} columns={columns}>
+      </c-custom-data-types
+    ></lightning-card>
+  </template>
+</template>

@@ -14,4 +14,27 @@ public with sharing class contactController {
       throw new AuraHandledException(e.getMessage());
     }
   }
+
+  @AuraEnabled(cacheable=true)
+  public static list<Contact> getContactListForDataTable() {
+    try {
+      list<Contact> conList = [
+        SELECT
+          Id,
+          Name,
+          Title,
+          Rank__c,
+          Picture__c,
+          Email,
+          Phone,
+          AccountId,
+          Account.Name
+        FROM Contact
+        WITH USER_MODE
+      ];
+      return conList;
+    } catch (Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
 }

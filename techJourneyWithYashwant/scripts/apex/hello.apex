@@ -36,3 +36,14 @@ p.makePayment();
 System.debug('Url : ' + System.URL.getOrgDomainUrl());
 
 SpotifyIntegration.searchWithSpotify('Despacito');
+
+list<Contact> conList = new List<Contact>();
+for (Contact con : [
+  SELECT id, Title, Rank__c, Picture__c
+  FROM Contact
+]) {
+  con.Picture__c = 'https://crtlsystem-dev-ed.develop.file.force.com/profilephoto/729dL000007dQbJ/F';
+
+  conList.add(con);
+}
+update conList;
